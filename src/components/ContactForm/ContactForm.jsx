@@ -7,15 +7,20 @@ export default function ContactForm({ onNewContact }) {
   const nameId = useId();
   const phoneId = useId();
 
-
   const initialValues = {
     name: "",
     number: "",
   };
 
   const validationSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
-    number: Yup.string().required("Number is required"),
+    name: Yup.string()
+      .required("Name is required")
+      .min(3, "Name is too short")
+      .max(50, "Name is too long"),
+    number: Yup.string()
+      .required("Number is required")
+      .min(3, "Number is too short")
+      .max(50, "Number is too long"),
   });
 
   function onSubmit({ name, number }, { resetForm }) {

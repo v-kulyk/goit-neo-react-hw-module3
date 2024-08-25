@@ -1,0 +1,18 @@
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  line-height: 1;
+}
+.contactForm > * {
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.error {
+  color: red;
+}
